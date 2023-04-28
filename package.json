@@ -1,9 +1,41 @@
 {
-  "name": "demo-repo",
-  "version": "0.2.0",
-  "description": "A sample package.json",
-  "dependencies": {
-    "@primer/css": "17.0.1"
+  "name": "testCz",
+  "private": true,
+  "workspaces": [
+    "src/"
+  ],
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:spareTime-Workshop/testCz.git",
+  "author": "shiqin <“i@shiq.in”>",
+  "license": "MIT",
+  "scripts": {
+    "prepare": "husky install",
+    "lint": "eslint . --ext .vue,.js,.ts,.jsx,.tsx --max-warnings 0 --cache"
   },
-  "license": "MIT"
+  "devDependencies": {
+    
+  },
+  "dependencies": {
+    "@babel/core": "^7.21.4",
+    "@babel/eslint-parser": "^7.21.3",
+    "@commitlint/cli": "^17.6.1",
+    "@commitlint/config-conventional": "^17.6.1",
+    "cz-conventional-changelog": "^3.3.0",
+    "cz-customizable": "^7.0.0",
+    "eslint": "^8.39.0",
+    "eslint-define-config": "^1.20.0",
+    "eslint-plugin-prettier": "^4.0.0",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.2.2",
+    "prettier": "^2.8.8"
+  },
+  "config": {
+    "commitizen": {
+      "path": "node_modules/cz-customizable"
+    }
+  },
+  "lint-staged": {
+    "*.{vue,js,ts,jsx,tsx}": "eslint --fix"
+  }
 }
